@@ -1,0 +1,83 @@
+<script>
+
+    // Se crear variable tipo arreglo para que sea colocado cualquier longitud de informaciòn en el array
+    let inicio = ["unacadena",3,9,0,100,1500,8111.23,"datos"];
+    // Se crear variable para guardar la cantidad de números encontrados para armar un nuevo arreglo
+    let numeros = 0;
+
+    // For para buscar solamente cuantos números encontramos para crear un nuevo array
+    for(i=0;i< inicio.length; i++)
+    {
+      if (isNaN(inicio[i]) || inicio[i] == "true" || inicio[i] == "false")
+      {
+        console.log( "Ups... " + inicio[i] + " no es un número.");    
+      }
+      else
+      {
+        //console.log(inicio[i]);
+        numeros++;
+      }
+
+    };
+
+    console.log(" Se encontraron una totalidad de " + numeros + " números en el arreglo");
+
+    // Creación de arreglo con solo números
+
+    let listaNumeros = new Array(numeros);
+
+    // extrear solos los números que tenga el arreglo para asignarlo al nuevo arreglo
+    let j = 0;
+    
+    for(i=0;i< inicio.length; i++)
+    {
+      if (!(isNaN(inicio[i]) || inicio[i] == "true" || inicio[i] == "false"))
+      {
+        if (numeros == j )
+           break;
+        listaNumeros[j] = inicio[i];
+        j++;
+      };
+
+     //console.log(listaNumeros);
+        
+    };
+
+  
+  // creación de variables para el proceso principal de ordenar
+let k;
+let izquierda;
+let derecha;
+let valorIzquierda;
+let valorDerecha;
+
+
+// Order Arreglo de Mayor a menor
+
+  for( k = 0; k < numeros; k++ ){ 
+    for(izquierda = 0; izquierda < (numeros - k); izquierda++){ 
+        derecha = izquierda + 1;
+      if( listaNumeros[izquierda] < listaNumeros[derecha] ){
+        {
+            valorIzquierda = listaNumeros[izquierda];
+            valorDerecha = listaNumeros[derecha];
+            listaNumeros[izquierda] = valorDerecha; 
+            listaNumeros[derecha] = valorIzquierda;
+        }
+      }
+    };
+  };
+
+  // Imprimir el resultado 
+
+  console.log("Luego de realizar el proceso de ordenamientos de los " + numeros + " números, el arreglo quedo de la siguiente forma");
+  
+  for( k = 0; k < numeros; k++ )
+  {
+    console.log(listaNumeros[k]);
+  }
+  
+
+
+
+</script>
