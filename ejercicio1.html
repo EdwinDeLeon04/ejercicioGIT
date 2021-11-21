@@ -1,4 +1,24 @@
 <script>
-numeroDeElementos="";
+    // creando variables para proceso
+ let numeroDeElementos= 19;
+ let finonnaci = "0,1";
+ let izquierda = 0;
+ let derecha = 1;
+ let i;
+ let resultado;
+
+ // for para la generaciòn de FIBONNACI
+ for (i=2; i <= numeroDeElementos; i++)
+ {
+   resultado = izquierda + derecha;
+   finonnaci = finonnaci + "," + resultado;
+   izquierda = derecha;
+   derecha = resultado;
+ }
+
+ // Imprime resultado
+ 
+console.log(finonnaci);
+
 
 </script>
