@@ -54,7 +54,7 @@ console.log("El resultado Factorial de " + factorial + "! es: " + resultado);
     console.log(validarParImpar(10));
     </script>
 
-// Punto 4
+// Punto 4 (10 Puntos)
 
 <script>
 
@@ -81,4 +81,138 @@ console.log(palindrome("edwin"));
 
 // Punto 5 (50 puntos)
 
+<script>
+
+class Persona {
+nombre;
+edad;
+
+constructor (nombre,edad)
+{
+    this.nombre = nombre;
+    this.edad = edad;
+}
+
+obtDetalles(){
+    return "la persona tiene los atributos Nombre: " + this.nombre + " y Edad: " + this.edad;
+}
+
+
+}
+
+
+class Estudiante extends Persona
+{
+    calificacion;
+
+    constructor(nombre,edad,calificacion)
+    {
+        super(nombre,edad);
+        this.calificacion = calificacion;
+    }
+
+    obtDetalles(){
+    return "El estudiante : " + super.nombre + " con edad: " + super.edad + " tiene una calificación : " + this.calificacion;
+}
+
+}
+
+
+class Profesor extends Persona
+{
+  asignatura;
+  nivel;
+
+  constructor(nombre, edad, asignatura, nivel)
+  {
+    super(nombre,edad);
+
+    if(asignatura != ""){
+       this.asignatura = asignatura;
+      }
+    else {
+       this.asignatura = "JS";
+    }
+
+    if(nivel != ""){
+        this.nivel = nivel;
+      }
+    else {
+       this.nivel = "básico";
+    }
+    
+  }
+
+  obtDetalles(){
+    return "El profesor : " + super.nombre + " con edad: " + super.edad + " tiene la asignatura : " + this.asignatura + " en el nivel: " + this.nivel;
+
+
+}
+
+}
+
+class Grupo 
+{
+    profesor;
+    promedio;
+    estudiantes=[];
+
+    constructor(profesor, estudiantes){
+        this.profesor = profesor;
+        this.estudiantes = estudiantes;
+    }
+
+    calificar(){
+
+        for(var i = 0; i < estudiantes.length;i++)
+        {
+            estudiantes[i].calificacion = Math.random() * 10;
+        }
+    }
+
+    calculoPromedios()
+    {
+        promedio = 0.0;
+
+        for(var i = 0; i < estudiantes.length;i++)
+        {
+            promedio += estudiantes[i].calificacion;
+        }
+
+        promedio /=  estudiantes.length;
+
+        return "El promedio de todos los " + estudiantes.length + " estudiantes es: " + promedio;
+    }
+
+    obtDetalles(){
+
+        console.log("El profesor: " + profesor.profesor );
+        console.log("Con asignatura: " + profesor.asignatura );
+        console.log("Del nivel: " + profesor.nivel );
+        console.log("_____Detalle de Estudiantes_____");
+        for(var i = 0; i < estudiantes.length;i++)
+        {
+            console.log("Nombre de Estudiante: " + estudiantes[i].nombre);
+            console.log("Edad del Estudiante: " + estudiantes[i].edad);
+            console.log("Calificación del Estudiante: " + estudiantes[i].calificacion);          
+        }
+    }
+}
+
+estudiantes=[6];
+
+estudiantes[0] = new Estudiante("Edwin De León",41,0.0);
+estudiantes[1] = new Estudiante("Stefhanie Rojas",3.3,0.0);
+estudiantes[2] = new Estudiante("Daniela Ortega",40,0.0);
+estudiantes[3] = new Estudiante("María Serracin",26,0.0);
+estudiantes[4] = new Estudiante("María Zuedo",32,0.0);
+estudiantes[5] = new Estudiante("Yarizel Moreno",31,0.0);
+
+profesor = new Profesor("Juan Perez",55);
+
+grupo = new Grupo(profesor,estudiantes);
+
+
+
+</script>
 // Bonus (15 Puntos)
