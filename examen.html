@@ -38,7 +38,7 @@ console.log("El resultado Factorial de " + factorial + "! es: " + resultado);
 </script>
 
 
-// Punto 3
+// Punto 3 (20 Puntos)
 
 <script>
   
@@ -55,6 +55,29 @@ console.log("El resultado Factorial de " + factorial + "! es: " + resultado);
     </script>
 
 // Punto 4
+
+<script>
+
+function palindrome(cadena) {
+    cadena = cadena.toLowerCase();
+    resultado = cadena.split("").reverse().join("");
+
+   if (resultado == cadena)
+      {
+        return "La cadeana de texto: " + cadena +  " es palindromo";
+      }
+      else
+      {
+        return "La cadeana de texto: " + cadena +  " no es palindromo";
+      }
+
+}
+
+console.log(palindrome("edwin"));
+
+
+</script>
+
 
 // Punto 5 (50 puntos)
 
